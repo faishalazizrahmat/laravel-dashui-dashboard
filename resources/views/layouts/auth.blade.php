@@ -3,7 +3,7 @@
 
 <head>
   @include("layouts.partials.admin.head")
-  <title>Sign In | Dash Ui - Bootstrap 5 Admin Dashboard Template</title>
+  <title>Sign In</title>
 </head>
 
 <body class="bg-light">

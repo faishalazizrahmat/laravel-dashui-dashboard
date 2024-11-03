@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: dashboard-app-masagung
+    container_name: dashboard-app-masagung
+    volumes:
+      - .:/app
+      - ./storage:/app/storage
+    ports:
+      - "9000:9000"

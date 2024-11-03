@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\PercobaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
+
+Route::get("/register", [RegisterController::class, 'index'])->name('register-view');
+Route::post("/register", [RegisterController::class, 'register'])->name('register');
 
 //User Routes
 Route::middleware(['auth','user-role:user'])->group(function()
@@ -29,6 +34,4 @@ Route::middleware(['auth','user-role:user'])->group(function()
 Route::middleware(['auth','user-role:admin'])->group(function()
 {
     Route::get("/admin/home",[App\Http\Controllers\HomeController::class, 'adminHome'])->name("admin.home");
-
 });
-

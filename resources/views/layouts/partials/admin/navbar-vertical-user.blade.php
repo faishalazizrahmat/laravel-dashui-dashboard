@@ -10,7 +10,7 @@
              <li class="nav-item">
                  <a class="nav-link has-arrow "
                      href="index.html">
-                     <i data-feather="home" class="nav-icon icon-xs me-2"></i>User Dashboard
+                     <i data-feather="home" class="nav-icon icon-xs me-2"></i>Usersawdad Dashboard
                  </a>
 
              </li>
