@@ -1,14 +1,14 @@
 version: '3.8'
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: dashboard-app-masagung
-    container_name: dashboard-app-masagung
+  laravel:
+    build: .
+    ports:
+      - "8000:8000"
     volumes:
       - .:/app
-      - ./storage:/app/storage
-    ports:
-      - "9000:9000"
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_KEY=base64:YOUR_APP_KEY
+      - APP_URL=http://localhost:8000
